@@ -1,0 +1,56 @@
+
+/*Barra de navegacion superior-------------------------------------------------------------*/
+#navbarTop {
+    background-color: #313435;
+    color:#ffffff;
+}
+
+/*Barra de navegacion superior-------------------------------------------------------------*/
+#navbarBottom {
+    background-color: #052029;
+    color:#ffffff;
+}
+/*Carousel---------------------------------------------------------------------------------*/
+.carousel-caption
+{
+    max-width: 500px; 
+    text-align: right ; 
+    right:5%  !important; 
+    left:auto !important; 
+    padding:5px ; 
+        
+}
+
+.imgcarousel {
+    filter: brightness(30%);
+}
+
+#cardHorizontal {
+    background-color: #313435;
+    color:#ffffff;
+}
+
+#btnEnviar {
+    background-color: #2de93794;
+    color:#ffffff;
+}
+
+/*----------------------------------------------------------------------------------------*/
+.navbar {
+    width: 100%;
+  }
+/*----------------------------------------------------------------------------------------*/
+
+#comprarTickets {
+    color: #19994a;
+}
+
+
+
+#divTarjetaCarousel {
+    position: absolute;
+    top: 600px;
+    right: 50px;
+    width: 575px;
+    height: 100px;
+}
