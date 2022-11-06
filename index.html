@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>TP Integrador Front End - Verónica Vazquez</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script>
+      function calcTotal() {
+          cant = document.getElementById('cantInput').value;
+          cant = parseInt(cant);
+          total = 0;
+          total = cant * 200;
+          categoria = document.getElementById('categ').value;
+
+          if (categoria == 1) {
+              total = total * .2;
+          };
+          if (categoria == 2) {
+              total = total * .5;
+          };
+          if (categoria == 3) {
+              total = total * .85;
+          };
+          document.getElementById('cantTotal').innerHTML = "Total a Pagar: $ " + total ;
+      }
+
+      function clearForm() {
+          document.getElementById('cantTotal').innerHTML = "Total a Pagar: $";
+      }
+  </script>
   </head>
 
   <!--COMIENZA BODY------------------------------------------------------------------------------------------>
@@ -21,10 +46,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
                 <div class="navbar-nav pd-10 fs-6 navbar-dark">
                     <a class="nav-link active" aria-current="page" href="#">La Conferencia</a>
-                    <a class="nav-link"  href="#">Los oradores</a>     
-                    <a class="nav-link"  href="#">El lugar y la lecha</a>
-                    <a class="nav-link"  href="#">Conviertete en Orador</a>
-                    <a class="nav-link" id="comprarTickets"  href="#">Comprar tickets</a>
+                    <a class="nav-link"  href="#oradores">Los oradores</a>     
+                    <a class="nav-link"  href="#donde">El lugar y la lecha</a>
+                    <a class="nav-link"  href="#orador">Conviertete en Orador</a>
+                    <a class="nav-link" id="comprarTicketsm"  href="#comprarTickets">Comprar tickets</a>
                 </div>       
             </div>     
         </div>  
@@ -40,7 +65,7 @@
                      <p  align="right"  >Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiates de Codo
                              a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!.</p>
                      <button  type="button"  class="btn btn-outline-light">Quiero ser orador</button>         
-                     <button type="button"  class="btn btn-success">Comprar tikets</button>
+                     <a type="button"  class="btn btn-success" href="#compraTickets">Comprar tikets</a>
                   </div>  
               </div>
             </div>
@@ -51,7 +76,7 @@
                        <p  align="right"  >Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiates de Codo
                                a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!.</p>
                        <button  type="button"  class="btn btn-outline-light">Quiero ser orador</button>         
-                       <button type="button"  class="btn btn-success">Comprar tikets</button>
+                       <a type="button"  class="btn btn-success" href="#compraTickets">Comprar tikets</a>
                     </div>  
                 </div>
             </div>
@@ -62,14 +87,14 @@
                          <p  align="right"  >Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiates de Codo
                                  a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!.</p>
                          <button  type="button"  class="btn btn-outline-light">Quiero ser orador</button>         
-                         <button type="button"  class="btn btn-success">Comprar tikets</button>
+                         <a type="button"  class="btn btn-success" href="#compraTickets">Comprar tikets</a>
                       </div>  
                  </div>
             </div>
           </div>
       </div>
       <!--FIN CARROUSEL------------------------------------------------------------------------------------->
-      <div align="center">
+      <div align="center" id="ordores">
           <h5>Conoce a los</h5>
           <h3>ORDADORES</h3>
       </div>
@@ -107,7 +132,7 @@
      
       <!--FIN CARDS------------------------------------------------------------------------------------->
       <!--COMIENZO CARD HORIZONTAL------------------------------------------------------------------------------------->
-      <div class="card mb-3" >
+      <div class="card mb-3" id="donde">
         <div class="row g-0">
           <div class="col-md-6">
             <img src="./img/honolulu.jpg" class="img-fluid rounded-start" alt="...">
@@ -126,7 +151,7 @@
       </div>
       <!--FIN CARD HORIZONTAL------------------------------------------------------------------------------------->
       <!--COMIENZO FORMULARIO------------------------------------------------------------------------------------->
-      <form align="center">    
+      <form align="center" id="orador">    
         <h6>CONVIÉRTETE EN UN</h6>
         <h4>ORADOR</h4>
         <p>Anotáte como orador para dar una <a href="#">charla ignite</a>. Cuentanos de que quieres hablar!</P>
@@ -155,6 +180,112 @@
       
      </form>
      <!--FIN FORMULARIO------------------------------------------------------------------------------------->
+     <!-- SECTION FORMULARIO -->
+   <section id="compraTickets">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-sm-3 align-items-center">
+                <div class="card border-primary" id="cardEst">
+                    <div class="card-body">
+                        <h5 class="card-title text-center fw-bold">Estudiante</h5>
+                        <p class="text-center">Tienen un descuento</p>
+                        <p class="text-center fw-bold">80%</p>
+                        <p class="text-center">
+                            <small class="text-muted">
+                        * presentar documentación
+                    </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 align-items-center">
+                <div class="card border-success" id="cardTra">
+                    <div class="card-body">
+                        <h5 class="card-title text-center fw-bold">Trainee</h5>
+                        <p class="text-center">Tienen un descuento</p>
+                        <p class="text-center fw-bold">50%</p>
+                        <p class="text-center">
+                            <small class="text-muted">
+                        * presentar documentación
+                    </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 align-items-center">
+                <div class="card border-warning" id="cardJun">
+                    <div class="card-body">
+                        <h5 class="card-title text-center fw-bold">Junior</h5>
+                        <p class="text-center">Tienen un descuento</p>
+                        <p class="text-center fw-bold">15%</p>
+                        <p class="text-center">
+                            <small class="text-muted">
+                        * presentar documentación
+                    </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <small>
+          Venta
+        </small>
+        </div>
+        <div class="text-center my-3">
+            <h3 class="fw-bold">VALOR DE TICKET 200$</h3>
+        </div>
+        <div class="row mx-1">
+            <div class="row">
+                <form id="myForm">
+                    <div class="col d-flex align-items-center mb-3">
+                        <input type="text" id="nameInput" class="form-control" placeholder="Nombre">
+                        <input type="text" id="lastNameInput" class="form-control" placeholder="Apellido">
+                    </div>
+                    <div class="col d-flex align-items-center mb-3">
+                        <input type="email" id="emailInput" class="form-control" placeholder="Correo">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col  justify-content-center mb-4">
+                    <div class="me-auto">
+                        <label for="cantInput" class="form-label">Cantidad</label>
+                        <input type="number" id="cantInput" class="form-control" min="1" required>
+                    </div>
+                </div>
+                <div class="col  justify-content-center mb-4">
+                    <div class="me-auto">
+                        <label for="catSelect" class="form-label">Categoría</label>
+                        <select id="categ" class="form-select" aria-label="Elija una categoría">
+              <option selected>Elige una categoría..</option>
+              <option value="1">Estudiante</option>
+              <option value="2">Trainee</option>
+              <option value="3">Junior</option>
+            </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="cantTotal" class="alert alert-primary" style="text-align:left" role="alert">
+                        Total a Pagar: $
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <div class="row">
+                    <div class="col d-grid gap-2">
+                        <button type="reset" class="btn btn-success" type="button" id="botonCompra" onclick="clearForm()">Borrar</button>
+                    </div>
+                    <div class="col d-grid gap-2">
+                        <button class="btn btn-success" type="button" id="botonCompra" onclick="calcTotal()">Resumen</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+</section>
+<br>
      <!--COMIENZA MENU INFERIOR  DE NAVEGACION----------------------------------------------------------------->
      <nav class="navbar navbar-expand-lg text-light navbar-dark mx-auto " id="navbarBottom">
       <div class="container-fluid">
